@@ -1,4 +1,5 @@
 import iconComplete from "../../assets/icon-complete.svg";
+import "./style.css";
 
 function CreditCardOk() {
   const resetForm = () => {

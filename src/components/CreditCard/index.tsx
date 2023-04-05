@@ -1,5 +1,3 @@
-import "./style.css";
-
 function CreditCard() {
   return (
     <aside className="cardDeco">
