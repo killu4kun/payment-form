@@ -21,7 +21,7 @@
 
 /* Card Front ========*/
 .cardFront {
-  background-image: url("../assets/bg-card-front.png");
+  background-image: url("../../assets/bg-card-front.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -53,7 +53,7 @@
 
 /* Card Back =======*/
 .cardBack {
-  background-image: url("../assets/bg-card-back.png");
+  background-image: url("../../assets/bg-card-back.png");
   background-size: contain;
   background-size: 100% 100%;
   background-repeat: no-repeat;
