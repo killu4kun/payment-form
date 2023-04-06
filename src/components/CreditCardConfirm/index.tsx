@@ -1,8 +1,9 @@
 import iconComplete from "../../assets/icon-complete.svg";
 import "./style.css";
 
-function CreditCardOk() {
+function CreditCardOk({ animateSlider }: any) {
   const resetForm = () => {
+    animateSlider(false);
     console.log("hello");
   };
 
