@@ -17,7 +17,10 @@ function CreditCard() {
   return (
     <aside className="cardDeco">
       <div className="cardFront">
-        <span>{formatCreditCardNumber(formValues?.cardNumber)}</span>
+        <span>
+          {formatCreditCardNumber(formValues?.cardNumber) ||
+            formatCreditCardNumber("0000000000000000")}
+        </span>
         <div>
           <span> {formValues.cardHolderName || "JANE APPLESEED"}</span>
           <span>
