@@ -1,16 +1,34 @@
+import useFormData from "@/hooks/useFormData";
+
 function CreditCard() {
+  const { formValues } = useFormData();
+
+  function formatCreditCardNumber(creditCardNumber: string): string {
+    // Remove todos os caracteres não numéricos
+    const cleaned = creditCardNumber.replace(/\D/g, "");
+
+    // Divide a string em grupos de quatro caracteres
+    const chunks = cleaned.match(/.{1,4}/g);
+
+    // Une os grupos com espaços em branco
+    return chunks ? chunks.join(" ") : "";
+  }
+
   return (
     <aside className="cardDeco">
       <div className="cardFront">
-        <span>{"0000 0000 0000 0000"}</span>
+        <span>{formatCreditCardNumber(formValues?.cardNumber)}</span>
         <div>
-          <span> {"Jane Appleseed"}</span>
-          <span>00/00</span>
+          <span> {formValues.cardHolderName || "JANE APPLESEED"}</span>
+          <span>
+            {formValues?.expirationDateMM || "00"}/
+            {formValues?.expirationDateYY || "00"}
+          </span>
         </div>
       </div>
 
       <div className="cardBack">
-        <span>000</span>
+        <span>{formValues?.cvc || "000"} </span>
       </div>
     </aside>
   );
