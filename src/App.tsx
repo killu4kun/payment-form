@@ -3,7 +3,7 @@ import CreditCard from "./components/CreditCard";
 import CreditCardOk from "./components/CreditCardConfirm";
 import CreditCardForm from "./components/CreditCardForm";
 
-import "./App.css";
+import "./styles/App.css";
 import CreditCardContextProvider from "./contexts/FormValues";
 
 export default function App() {

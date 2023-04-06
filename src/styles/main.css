@@ -17,7 +17,7 @@ body {
 
 body::after {
   content: "";
-  background-image: url("./assets/bg-main-desktop.png");
+  background-image: url("../assets/bg-main-desktop.png");
   background-size: cover;
   width: 33.5%;
   height: 100vh;
@@ -45,7 +45,7 @@ body::after {
   }
 
   body::after {
-    background-image: url("./assets/bg-main-mobile.png");
+    background-image: url("../assets/bg-main-mobile.png");
     height: 40%;
     width: 100%;
   }
