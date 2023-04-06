@@ -32,8 +32,6 @@ export default function App() {
     }, 500);
   };
 
-  console.log(validate);
-
   return (
     <>
       <CreditCardContextProvider>
