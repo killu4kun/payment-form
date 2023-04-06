@@ -49,7 +49,7 @@ function CreditCardForm({ animateSlider }: any) {
           placeholder="e.g. 1234 5678 9123 0000"
           name="cardNumber"
           className="card-input"
-          minLength={19}
+          maxLength={16}
         />
       </label>
       <p className="info info--hidden" aria-live="polite"></p>

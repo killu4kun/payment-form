@@ -1,8 +1,18 @@
+import useFormData from "@/hooks/useFormData";
 import iconComplete from "../../assets/icon-complete.svg";
 import "./style.css";
 
 function CreditCardOk({ animateSlider }: any) {
+  const { setFormValues } = useFormData();
+
   const resetForm = () => {
+    setFormValues({
+      cardHolderName: "",
+      cardNumber: "",
+      expirationDateYY: "",
+      expirationDateMM: "",
+      cvc: "",
+    });
     animateSlider(false);
     console.log("hello");
   };
