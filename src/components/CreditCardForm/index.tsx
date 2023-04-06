@@ -1,6 +1,5 @@
 import useFormData from "@/hooks/useFormData";
-import { useState } from "react";
-import { FieldErrors, Resolver, useForm } from "react-hook-form";
+import { FormEvent, useState } from "react";
 
 import "./style.css";
 
@@ -12,8 +11,12 @@ export type FormValues = {
   cvc: string;
 };
 
+type InputType = "add" | "remove";
+
 function CreditCardForm({ animateSlider }: any) {
   const { formValues, setFormValues } = useFormData();
+  const [validations, setValidations] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Partial<FormValues>>({});
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -23,9 +26,64 @@ function CreditCardForm({ animateSlider }: any) {
     });
   };
 
-  const onSubmit = (event: any): void => {
+  const validadeCardHolderName = (name: string) => {
+    if (name.length === 0) {
+      return "Cant be blank";
+    }
+    return "";
+  };
+
+  const validadeCardNumber = (number: string) => {
+    if (number) {
+      if (number.match(/[^0-9\s]/g)) {
+        return "Must contain only digits";
+      } else if (number.length < 16) {
+        return "Must be 16 digits";
+      } else {
+        return "";
+      }
+    } else {
+      return "Cant be blank";
+    }
+  };
+
+  const validadeExpirationDate = (yy: string, mm: string) => {
+    if (yy.length === 0 || mm.length === 0) {
+      return "Cant be blank";
+    }
+    return "";
+  };
+
+  const validateCVC = (cvc: string) => {
+    if (cvc.length < 3) {
+      return "Must be 3 digits";
+    }
+    return "";
+  };
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    animateSlider(true);
+
+    setValidations(true);
+    const errors: Partial<FormValues> = {};
+    errors.cardHolderName = validadeCardHolderName(formValues.cardHolderName);
+    errors.cardNumber = validadeCardNumber(formValues.cardNumber);
+    errors.expirationDateYY = validadeExpirationDate(
+      formValues.expirationDateYY,
+      formValues.expirationDateMM
+    );
+    errors.expirationDateMM = validadeExpirationDate(
+      formValues.expirationDateYY,
+      formValues.expirationDateMM
+    );
+    errors.cvc = validateCVC(formValues.cvc);
+
+    setErrors(errors);
+
+    const hasErrors = Object.values(errors).some(error => error !== "");
+    if (!hasErrors) {
+      animateSlider(true);
+    }
   };
 
   return (
@@ -40,7 +98,11 @@ function CreditCardForm({ animateSlider }: any) {
           className="card-input"
         />
       </label>
-      <p className="info info--hidden" aria-live="polite"></p>
+      {validations && errors.cardHolderName && (
+        <p className="info " aria-live="polite">
+          {errors.cardHolderName}
+        </p>
+      )}
       <label className="labelnumber">
         Card Number
         <input
@@ -52,7 +114,11 @@ function CreditCardForm({ animateSlider }: any) {
           maxLength={16}
         />
       </label>
-      <p className="info info--hidden" aria-live="polite"></p>
+      {validations && errors.cardNumber && (
+        <p className="info " aria-live="polite">
+          {errors.cardNumber}
+        </p>
+      )}
 
       <div className="cvc-mmyy">
         <label className="labelmm labelyy">
@@ -76,9 +142,16 @@ function CreditCardForm({ animateSlider }: any) {
             />
           </div>
         </label>
-
-        <p className="info info--hidden" aria-live="polite"></p>
-
+        {validations && errors.expirationDateYY && (
+          <p className="info " aria-live="polite">
+            {errors.expirationDateYY}
+          </p>
+        )}
+        {validations && errors.expirationDateMM && (
+          <p className="info " aria-live="polite">
+            {errors.expirationDateMM}
+          </p>
+        )}
         <label className="labelcvc">
           CVC
           <input
@@ -90,7 +163,11 @@ function CreditCardForm({ animateSlider }: any) {
             className="card-input"
           />
         </label>
-        <p className="info info--hidden" aria-live="polite"></p>
+        {validations && errors.cvc && (
+          <p className="info " aria-live="polite">
+            {errors.cvc}
+          </p>
+        )}
       </div>
 
       <button type="submit" className="btn-submit btn-primary">

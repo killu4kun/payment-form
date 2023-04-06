@@ -14,7 +14,6 @@ function CreditCardOk({ animateSlider }: any) {
       cvc: "",
     });
     animateSlider(false);
-    console.log("hello");
   };
 
   return (

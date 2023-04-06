@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreditCard from "./components/CreditCard";
 import CreditCardOk from "./components/CreditCardConfirm";
-import CreditCardForm, { FormValues } from "./components/CreditCardForm";
+import CreditCardForm from "./components/CreditCardForm";
 
 import "./App.css";
 import CreditCardContextProvider from "./contexts/FormValues";
