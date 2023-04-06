@@ -1,5 +1,5 @@
 import { FormValues } from "@/components/CreditCardForm";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 import { ContextType, FormValuesProps } from "./types";
 
 const initialValues: FormValues = {

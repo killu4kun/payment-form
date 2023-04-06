@@ -18,7 +18,7 @@ function CreditCardOk({ animateSlider }: any) {
 
   return (
     <div className="cardThanks">
-      <img src={iconComplete} alt="" />
+      <img src={iconComplete} alt="icon-complete" />
       <p>Thank you!</p>
       <p>We&apos;ve added your card details</p>
       <button className="btn-primary" onClick={resetForm}>

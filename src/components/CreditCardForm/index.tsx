@@ -87,7 +87,7 @@ function CreditCardForm({ animateSlider }: any) {
   };
 
   return (
-    <form className="cardForm" onSubmit={onSubmit}>
+    <form className="cardForm" onSubmit={onSubmit} data-testid='teste'>
       <label className="labelname">
         Cardholder Name
         <input

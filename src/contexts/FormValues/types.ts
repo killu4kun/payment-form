@@ -7,5 +7,6 @@ export interface FormValuesProps {
 
 export type ContextType = {
   formValues: FormValues;
+  error?: string;
   setFormValues: (values: FormValues) => void;
 };
