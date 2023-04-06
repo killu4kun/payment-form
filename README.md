@@ -1,90 +1,41 @@
-# React TypeScript template with Vite
+# Context
+This project is a technical interview test.It simulates a payment form.
 
-This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) boilerplate built with [Vite](https://vitejs.dev).
+## Technologies used
 
-## What's inside?
+frontend:
+> Developed using: React, HTML , CSS.
 
-- [ReactJS](https://reactjs.org)
-- [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
-- [Cypress](https://www.cypress.io)
-- [ESLint](https://eslint.org)
-- [Prettier](https://prettier.io)
-- [Polyfills](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
+## Installing Dependencies
 
-## Getting started
+    $ git clone git@github.com:killu4kun/payment-form.git
+    $ cd payment-form
+    $ npm install
+## Running tests 
+    $ npm test
+## Running application
 
-1. Create the project.
+* To run the frontend:
 
-   ```bash
-   npx degit fabien-ml/react-ts-vite-template my-app
-   ```
-
-2. Access the project directory.
-
-   ```bash
-   cd my-app
-   ```
-
-3. Initialize a git repository.
-
-   ```bash
-   git init
-   ```
-
-4. Install dependencies.
-
-   ```bash
-   npm install
-   ```
-
-5. Start dev server with hot reload at http://localhost:3000.
-   ```bash
-   npm run dev
-   ```
-
-## Recommended VS Code extensions
-
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-## Other commands
-
-### Lint commands
-
-```bash
-npm run lint
-```
-
-### Build commands
-
-```bash
-npm run build
-```
-
-### Run the app in production mode at http://localhost:3000.
-
-```bash
-npm run serve
-```
-
-### Test commands
-
-- Run unit tests and watch
-  ```bash
-  npm run test:unit
   ```
-- Run unit tests with coverage
-  ```bash
-  npm run test:unit:coverage
+    npm run dev
+    if it dont open, access http://localhost:3000/ in the browser
   ```
-- Run e2e tests
-  ```bash
-  npm run test:e2e
-  ```
+  
+  ## Languages and tools
 
-## License
+### Typescript
 
-This project is licensed under the MIT License.
+- [React](http://facebook.github.io/react) library used to create user interfaces on web pages.
+- [Jest](https://jestjs.io/) is a delightful JavaScript Testing Framework with a focus on simplicity.
+- [Husky](https://typicode.github.io/husky/#/) Husky improves your commits and more 🐶 woof! You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push.
+- [Vite](https://vitejs.dev/) Get ready for a development environment that can finally catch up with you
+
+
+### Deploy 
+
+Deplo foi feito utilizando-se um bucket da AWS(S3) e este é o link para o ambiente de produção https://d2molkkioluh3.cloudfront.net/
+
+## Contact
+
+- [Linkedin Matheus Soares](https://www.linkedin.com/in/mateeus-soarees/)
