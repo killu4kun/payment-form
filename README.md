@@ -34,7 +34,7 @@ frontend:
 
 ### Deploy 
 
-Deplo foi feito utilizando-se um bucket da AWS(S3) e este é o link para o ambiente de produção https://d2molkkioluh3.cloudfront.net/
+Deploy made on vercell and this is the link https://payment-form-theta.vercel.app/
 
 ## Contact
 
